@@ -8,7 +8,7 @@ resource "kubernetes_deployment" "si-deployment" {
   }
 
   spec {
-    replicas                  = 1
+    replicas                  = 2
     selector {
       match_labels = {
         App = "events-internal"
@@ -22,7 +22,7 @@ resource "kubernetes_deployment" "si-deployment" {
       }
       spec {
         container {
-          image = "gcr.io/mar-roidtc511/internal:v1.0"
+          image = "gcr.io/sylvan-terra-309902/internal:v1.0"
           name  = "internal-image"
 
           port {

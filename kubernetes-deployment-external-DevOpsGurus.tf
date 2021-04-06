@@ -8,7 +8,7 @@ resource "kubernetes_deployment" "se-deployment" {
   }
 
   spec {
-    replicas                  = 1
+    replicas                  = 3
     selector {
       match_labels = {
         App = "events-external"
@@ -22,7 +22,7 @@ resource "kubernetes_deployment" "se-deployment" {
       }
       spec {
         container {
-          image = "gcr.io/mar-roidtc511/external:v1.0"
+          image = "gcr.io/sylvan-terra-309902/external:v1.0"
           name  = "external-image"
 
           port {
